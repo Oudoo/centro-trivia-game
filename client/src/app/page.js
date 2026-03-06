@@ -193,6 +193,7 @@ export default function PlayerPage() {
     return (
       <div className="min-h-screen flex flex-col p-4 bg-centro-dark">
         <div className="text-center mb-4 animate-fadeIn">
+          <img src="/centro-logo.png" alt="Centro" className="h-8 mx-auto mb-2" />
           <p className="text-centro-white/50 text-sm font-bold uppercase tracking-widest">
             Question {question?.questionNumber} of {question?.totalQuestions}
           </p>
@@ -224,6 +225,7 @@ export default function PlayerPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-centro-dark">
         <div className="animate-fadeIn text-center">
+          <img src="/centro-logo.png" alt="Centro" className="h-8 mx-auto mb-6" />
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-centro-white/10 flex items-center justify-center">
             <svg className="w-10 h-10 text-centro-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -240,9 +242,9 @@ export default function PlayerPage() {
   if (screen === 'result') {
     const isCorrect = result?.correct;
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center p-6 ${isCorrect ? 'bg-green-900' : 'bg-red-900'
-        } ${shaking ? 'animate-shake' : ''}`}>
+      <div className={`min-h-screen flex flex-col items-center justify-center p-6 bg-centro-dark ${shaking ? 'animate-shake' : ''}`}>
         <div className="animate-fadeIn text-center">
+          <img src="/centro-logo.png" alt="Centro" className="h-8 mx-auto mb-6" />
           <div className="text-7xl mb-6">
             {isCorrect ? '🎉' : '😢'}
           </div>

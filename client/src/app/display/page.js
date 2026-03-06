@@ -217,6 +217,7 @@ export default function DisplayPage() {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-centro-dark">
                 <div className="animate-fadeIn text-center max-w-4xl w-full">
+                    <img src="/centro-logo.png" alt="Centro" className="h-12 mx-auto mb-6" />
                     <h2 className="text-3xl font-bold text-centro-white/60 mb-6 uppercase tracking-widest">
                         Correct Answer
                     </h2>
@@ -268,6 +269,7 @@ export default function DisplayPage() {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-centro-dark">
                 <div className="animate-fadeIn text-center max-w-3xl w-full">
+                    <img src="/centro-logo.png" alt="Centro" className="h-12 mx-auto mb-6" />
                     {isFinal && (
                         <div className="mb-4">
                             <span className="text-6xl">🏆</span>
