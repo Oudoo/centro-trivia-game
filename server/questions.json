@@ -1,0 +1,64 @@
+{
+    "gameTitle": "How Well Do You Know Centro?",
+    "globalSettings": {
+        "timeLimitSeconds": 10,
+        "maxPointsPerQuestion": 1000
+    },
+    "questions": [
+        {
+            "id": "q_001",
+            "question": "How many 'Centroees' are currently part of our global team?",
+            "options": [
+                "800",
+                "1,000",
+                "1,500",
+                "2,500"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "id": "q_002",
+            "question": "Which of these is NOT one of Centro's three core solutions?",
+            "options": [
+                "Business Process Outsourcing",
+                "Healthcare Solutions",
+                "Hardware Manufacturing",
+                "Digital Transformation"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "id": "q_003",
+            "question": "Across how many global locations does Centro currently operate?",
+            "options": [
+                "3",
+                "6",
+                "9",
+                "12"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "id": "q_004",
+            "question": "What is Centro's current Customer Satisfaction (CSAT) percentage?",
+            "options": [
+                "85%",
+                "88%",
+                "91%",
+                "98%"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "id": "q_005",
+            "question": "According to our milestones, how much money has Centro saved for its clients?",
+            "options": [
+                "$10M+",
+                "$25M+",
+                "$50M+",
+                "$100M+"
+            ],
+            "correctAnswerIndex": 2
+        }
+    ]
+}

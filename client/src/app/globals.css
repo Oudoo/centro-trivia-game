@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --color-centro-dark: #004a59;
+  --color-centro-white: #ffffff;
+  --color-centro-gray: #32373c;
+  --color-answer-a: #e21b3c;
+  --color-answer-b: #1368ce;
+  --color-answer-c: #d89e00;
+  --color-answer-d: #26890c;
+  --font-family-roboto: 'Roboto', sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-family-roboto);
+    background-color: var(--color-centro-dark);
+    color: var(--color-centro-white);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  /* Shaking animation for wrong answers */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+    20%, 40%, 60%, 80% { transform: translateX(8px); }
+  }
+
+  .animate-shake {
+    animation: shake 0.6s ease-in-out;
+  }
+
+  /* Pulse animation */
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  /* Slide up animation */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+
+  /* Timer countdown ring */
+  @keyframes countdown {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 283; }
+  }
+
+  /* Leaderboard bar fill */
+  @keyframes barFill {
+    from { width: 0%; }
+    to { width: var(--bar-width); }
+  }
+
+  .animate-barFill {
+    animation: barFill 0.8s ease-out forwards;
+  }
+
+  /* Correct answer flash */
+  @keyframes correctFlash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .animate-correctFlash {
+    animation: correctFlash 0.5s ease-in-out 3;
+  }
+}
+
+/* Timer circle */
+.timer-circle {
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Answer button base styles */
+.answer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 80px;
+}
+
+.answer-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.answer-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Leaderboard entry animation stagger */
+.leaderboard-entry {
+  opacity: 0;
+  animation: slideUp 0.4s ease-out forwards;
+}
