@@ -16,8 +16,12 @@ export default function DisplayPage() {
     const [isFinal, setIsFinal] = useState(false);
     const [answerProgress, setAnswerProgress] = useState({ answered: 0, total: 0 });
     const confettiFired = useRef(false);
+    const [playerUrl, setPlayerUrl] = useState('');
 
-    const frontendUrl = typeof window !== 'undefined' ? window.location.origin : '';
+    useEffect(() => {
+        const url = process.env.NEXT_PUBLIC_PLAYER_URL || window.location.origin;
+        setPlayerUrl(url);
+    }, []);
 
     useEffect(() => {
         const socket = getSocket();
@@ -117,13 +121,17 @@ export default function DisplayPage() {
                     <p className="text-centro-white/60 text-xl mb-10">Scan the QR code to join!</p>
 
                     <div className="bg-white p-6 rounded-3xl inline-block shadow-2xl mb-10">
-                        <QRCodeSVG
-                            value={frontendUrl}
-                            size={280}
-                            level="H"
-                            fgColor="#004a59"
-                            bgColor="#ffffff"
-                        />
+                        {playerUrl ? (
+                            <QRCodeSVG
+                                value={playerUrl}
+                                size={280}
+                                level="H"
+                                fgColor="#004a59"
+                                bgColor="#ffffff"
+                            />
+                        ) : (
+                            <div style={{ width: 280, height: 280 }} className="flex items-center justify-center text-centro-gray">Loading QR...</div>
+                        )}
                     </div>
 
                     <div className="flex items-center justify-center gap-3">
@@ -220,8 +228,8 @@ export default function DisplayPage() {
                                 <div
                                     key={i}
                                     className={`rounded-2xl p-6 flex items-center gap-4 transition-all duration-500 ${i === correctIdx
-                                            ? `${answerColors[i]} animate-correctFlash ring-4 ring-white scale-105`
-                                            : 'bg-centro-gray/30 opacity-40'
+                                        ? `${answerColors[i]} animate-correctFlash ring-4 ring-white scale-105`
+                                        : 'bg-centro-gray/30 opacity-40'
                                         }`}
                                 >
                                     <span className="text-3xl opacity-50">{answerShapes[i]}</span>
@@ -277,9 +285,9 @@ export default function DisplayPage() {
                                 style={{ animationDelay: `${i * 120}ms` }}
                             >
                                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-black text-xl ${i === 0 ? 'bg-yellow-400 text-centro-dark' :
-                                        i === 1 ? 'bg-gray-300 text-centro-dark' :
-                                            i === 2 ? 'bg-amber-600 text-white' :
-                                                'bg-centro-gray/30 text-centro-white/60'
+                                    i === 1 ? 'bg-gray-300 text-centro-dark' :
+                                        i === 2 ? 'bg-amber-600 text-white' :
+                                            'bg-centro-gray/30 text-centro-white/60'
                                     }`}>
                                     {i + 1}
                                 </div>
