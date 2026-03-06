@@ -1,64 +1,64 @@
 {
-    "gameTitle": "How Well Do You Know Centro?",
+    "gameTitle": "Centro Trivia – Test Round",
     "globalSettings": {
         "timeLimitSeconds": 10,
         "maxPointsPerQuestion": 1000
     },
     "questions": [
         {
-            "id": "q_001",
-            "question": "How many 'Centroees' are currently part of our global team?",
+            "id": 1,
+            "question": "What is the capital of France?",
             "options": [
-                "800",
-                "1,000",
-                "1,500",
-                "2,500"
+                "Berlin",
+                "Madrid",
+                "Paris",
+                "Rome"
             ],
             "correctAnswerIndex": 2
         },
         {
-            "id": "q_002",
-            "question": "Which of these is NOT one of Centro's three core solutions?",
+            "id": 2,
+            "question": "Which planet is known as the Red Planet?",
             "options": [
-                "Business Process Outsourcing",
-                "Healthcare Solutions",
-                "Hardware Manufacturing",
-                "Digital Transformation"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "q_003",
-            "question": "Across how many global locations does Centro currently operate?",
-            "options": [
-                "3",
-                "6",
-                "9",
-                "12"
+                "Venus",
+                "Mars",
+                "Jupiter",
+                "Saturn"
             ],
             "correctAnswerIndex": 1
         },
         {
-            "id": "q_004",
-            "question": "What is Centro's current Customer Satisfaction (CSAT) percentage?",
+            "id": 3,
+            "question": "How many continents are there on Earth?",
             "options": [
-                "85%",
-                "88%",
-                "91%",
-                "98%"
+                "5",
+                "6",
+                "7",
+                "8"
             ],
             "correctAnswerIndex": 2
         },
         {
-            "id": "q_005",
-            "question": "According to our milestones, how much money has Centro saved for its clients?",
+            "id": 4,
+            "question": "What is the largest ocean on Earth?",
             "options": [
-                "$10M+",
-                "$25M+",
-                "$50M+",
-                "$100M+"
+                "Atlantic",
+                "Indian",
+                "Arctic",
+                "Pacific"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 3
+        },
+        {
+            "id": 5,
+            "question": "Which animal is the tallest in the world?",
+            "options": [
+                "Elephant",
+                "Giraffe",
+                "Horse",
+                "Camel"
+            ],
+            "correctAnswerIndex": 1
         }
     ]
 }

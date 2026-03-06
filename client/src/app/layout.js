@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "How Well Do You Know Centro?",
-  description: "Live trivia game — test your Centro knowledge!",
+  title: "Centro Trivia",
+  description: "Live trivia game powered by Centro",
 };
 
 export default function RootLayout({ children }) {
