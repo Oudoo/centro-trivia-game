@@ -193,7 +193,7 @@ export default function PlayerPage() {
     return (
       <div className="h-[100dvh] w-full flex flex-col p-4 sm:p-6 bg-centro-dark overflow-hidden overscroll-none">
         {/* Header & Question Text */}
-        <div className="text-center mb-4 sm:mb-6 animate-fadeIn shrink-0 flex flex-col items-center justify-center pt-2">
+        <div className="text-center mb-4 sm:mb-5 animate-fadeIn shrink-0 flex flex-col items-center justify-center pt-2">
           <img src="/centro-logo.png" alt="Centro" className="h-6 sm:h-8 mx-auto mb-2 sm:mb-3" />
           <p className="text-centro-white/50 text-xs sm:text-sm font-bold uppercase tracking-widest mb-2 sm:mb-3">
             Question {question?.questionNumber} of {question?.totalQuestions}
@@ -201,6 +201,15 @@ export default function PlayerPage() {
           <h2 className="text-xl md:text-2xl font-bold text-center px-1 leading-snug line-clamp-4">
             {question?.question}
           </h2>
+        </div>
+
+        {/* Animated Countdown Bar */}
+        <div className="w-full h-1.5 sm:h-2 bg-white/10 rounded-full mb-4 sm:mb-6 shrink-0 overflow-hidden">
+          <div 
+            key={question?.id || question?.questionNumber}
+            className="h-full rounded-full animate-progressShrink"
+            style={{ animationDuration: '20s' }}
+          ></div>
         </div>
 
         {/* Answer Buttons Grid */}

@@ -1,7 +1,7 @@
 {
     "gameTitle": "Centro Trivia – Test Round",
     "globalSettings": {
-        "timeLimitSeconds": 10,
+        "timeLimitSeconds": 20,
         "maxPointsPerQuestion": 1000
     },
     "questions": [

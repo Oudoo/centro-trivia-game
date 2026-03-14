@@ -74,6 +74,18 @@
     to { stroke-dashoffset: 283; }
   }
 
+  /* Progress bar animation */
+  @keyframes progressShrink {
+    0% { width: 100%; background-color: var(--color-answer-d); }
+    50% { width: 50%; background-color: var(--color-answer-c); }
+    80% { width: 20%; background-color: var(--color-answer-a); }
+    100% { width: 0%; background-color: var(--color-answer-a); }
+  }
+
+  .animate-progressShrink {
+    animation: progressShrink linear forwards;
+  }
+
   /* Leaderboard bar fill */
   @keyframes barFill {
     from { width: 0%; }
