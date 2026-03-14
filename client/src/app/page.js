@@ -75,6 +75,9 @@ export default function PlayerPage() {
     socket.on('player:result', (res) => {
       setResult(res);
       setTotalScore(res.totalScore);
+      if (res.leaderboard) {
+        setLeaderboard(res.leaderboard);
+      }
       if (!res.correct) {
         setShaking(true);
         setTimeout(() => setShaking(false), 600);
@@ -138,8 +141,8 @@ export default function PlayerPage() {
         <div className="animate-fadeIn w-full max-w-sm">
           <div className="text-center mb-8">
             <img src="/centro-logo.png" alt="Centro" className="h-14 mx-auto mb-4" />
-            <h1 className="text-2xl font-black tracking-tight">
-              {gameTitle || 'Centro Trivia'}
+            <h1 className="text-2xl font-black tracking-tight leading-tight">
+              {gameTitle || 'Who knows Centro better?'}
             </h1>
             <p className="text-centro-white/60 mt-2 text-sm">Enter your name to join the game</p>
           </div>
@@ -256,9 +259,10 @@ export default function PlayerPage() {
   // ─── RESULT SCREEN ────────────────────────────────────────────────
   if (screen === 'result') {
     const isCorrect = result?.correct;
+    const rank = leaderboard.findIndex(p => p.name === playerName) + 1;
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center p-6 bg-centro-dark ${shaking ? 'animate-shake' : ''}`}>
-        <div className="animate-fadeIn text-center">
+        <div className="animate-fadeIn text-center w-full max-w-sm">
           <img src="/centro-logo.png" alt="Centro" className="h-8 mx-auto mb-6" />
           <div className="text-7xl mb-6">
             {isCorrect ? '🎉' : '😢'}
@@ -274,7 +278,33 @@ export default function PlayerPage() {
           <div className="mt-8 px-6 py-4 bg-white/10 rounded-2xl">
             <p className="text-centro-white/60 text-sm">Total Score</p>
             <p className="text-4xl font-black">{totalScore}</p>
+            {rank > 0 && (
+              <p className="text-centro-white/50 mt-2 text-lg">
+                Current Rank: <span className="font-bold text-centro-white">#{rank}</span>
+              </p>
+            )}
           </div>
+          
+          {/* Mini Leaderboard below it */}
+          {leaderboard.length > 0 && (
+            <div className="mt-4 px-4 py-4 bg-white/5 rounded-2xl text-left border border-white/5">
+              <p className="text-centro-white/50 text-xs font-bold uppercase mb-3 text-center">Top 5 Players</p>
+              <div className="space-y-2">
+                {leaderboard.slice(0, 5).map((p, i) => (
+                  <div key={i} className={`flex justify-between items-center text-sm ${p.name === playerName ? 'font-bold text-centro-white bg-white/10 -mx-2 px-2 py-1 rounded-lg' : 'text-centro-white/80'}`}>
+                    <span>{i + 1}. {p.name} {p.name === playerName && '(You)'}</span>
+                    <span className="font-black">{p.score}</span>
+                  </div>
+                ))}
+              </div>
+              {rank > 5 && (
+                <div className="mt-2 pt-2 border-t border-white/10 flex justify-between items-center text-sm font-bold text-centro-white">
+                  <span>{rank}. {playerName} (You)</span>
+                  <span className="font-black">{totalScore}</span>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     );

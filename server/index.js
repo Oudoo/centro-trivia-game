@@ -125,6 +125,8 @@ function endQuestion() {
   broadcastGameState();
   io.emit('game:results', results);
 
+  const currentLeaderboard = getLeaderboard();
+
   // Send individual results to each player
   Object.values(players).forEach(p => {
     if (p.socketId) {
@@ -135,6 +137,7 @@ function endQuestion() {
         pointsEarned,
         totalScore: p.score,
         correctAnswerIndex: correctIndex,
+        leaderboard: currentLeaderboard,
       });
     }
   });
