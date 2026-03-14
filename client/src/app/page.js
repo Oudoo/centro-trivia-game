@@ -318,16 +318,44 @@ export default function PlayerPage() {
         <div className="animate-fadeIn text-center w-full max-w-sm">
           <img src="/centro-logo.png" alt="Centro" className="h-10 mx-auto mb-6" />
           <h2 className="text-3xl font-black mb-2">Game Over!</h2>
-          <div className="mt-6 px-6 py-5 bg-white/10 rounded-2xl">
+          <div className="mt-6 px-4 py-5 bg-white/10 rounded-2xl">
             <p className="text-centro-white/60 text-sm">Your Final Score</p>
             <p className="text-5xl font-black mt-1">{totalScore}</p>
             {rank > 0 && (
               <p className="text-centro-white/50 mt-2 text-lg">
-                Rank: <span className="font-bold text-centro-white">#{rank}</span>
+                Final Rank: <span className="font-bold text-centro-white">#{rank}</span>
               </p>
             )}
           </div>
-          <p className="text-centro-white/40 mt-8 text-sm">Thanks for playing, {playerName}!</p>
+
+          {/* Full Leaderboard for Game Over */}
+          {leaderboard.length > 0 && (
+            <div className="mt-6 px-4 py-4 bg-white/5 rounded-2xl text-left border border-white/5 max-h-[40vh] overflow-y-auto">
+              <p className="text-centro-white/50 text-xs font-bold uppercase mb-4 text-center tracking-widest bg-centro-dark/80 sticky -top-4 py-2 backdrop-blur-sm z-10">
+                Final Leaderboard
+              </p>
+              <div className="space-y-3">
+                {leaderboard.map((p, i) => (
+                  <div key={i} className={`flex justify-between items-center text-sm ${p.name === playerName ? 'font-bold text-centro-white bg-white/15 -mx-3 px-3 py-2 rounded-xl' : 'text-centro-white/80 py-1'}`}>
+                    <span className="flex items-center gap-3">
+                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                        i === 0 ? 'bg-yellow-400 text-centro-dark' :
+                        i === 1 ? 'bg-gray-300 text-centro-dark' :
+                        i === 2 ? 'bg-amber-600 text-white' :
+                        'bg-white/10 text-white/50'
+                      }`}>
+                        {i + 1}
+                      </span>
+                      <span>{p.name} {p.name === playerName && '(You)'}</span>
+                    </span>
+                    <span className="font-black text-lg">{p.score}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          <p className="text-centro-white/40 mt-8 mb-4 text-sm">Thanks for playing, {playerName}!</p>
         </div>
       </div>
     );
