@@ -1,64 +1,183 @@
 {
-    "gameTitle": "Who knows Centro better?",
-    "globalSettings": {
-        "timeLimitSeconds": 20,
-        "maxPointsPerQuestion": 1000
+  "gameTitle": "How Well Do You Know Centro?",
+  "globalSettings": {
+    "timeLimitSeconds": 10,
+    "maxPointsPerQuestion": 1000
+  },
+  "questions": [
+    {
+      "id": "his_01",
+      "question": "In what year was Centro officially founded?",
+      "options": ["2015", "2009", "2005", "2012"],
+      "correctAnswerIndex": 1
     },
-    "questions": [
-        {
-            "id": 1,
-            "question": "What is the capital of France?",
-            "options": [
-                "Berlin",
-                "Madrid",
-                "Paris",
-                "Rome"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": 2,
-            "question": "Which planet is known as the Red Planet?",
-            "options": [
-                "Venus",
-                "Mars",
-                "Jupiter",
-                "Saturn"
-            ],
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": 3,
-            "question": "How many continents are there on Earth?",
-            "options": [
-                "5",
-                "6",
-                "7",
-                "8"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": 4,
-            "question": "What is the largest ocean on Earth?",
-            "options": [
-                "Atlantic",
-                "Indian",
-                "Arctic",
-                "Pacific"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": 5,
-            "question": "Which animal is the tallest in the world?",
-            "options": [
-                "Elephant",
-                "Giraffe",
-                "Horse",
-                "Camel"
-            ],
-            "correctAnswerIndex": 1
-        }
-    ]
+    {
+      "id": "his_02",
+      "question": "What was the very first office location?",
+      "options": ["Dubai, UAE", "Winchester, VA", "New York, NY", "Cairo, Egypt"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "his_03",
+      "question": "How many employees did Centro have in its first year of operation?",
+      "options": ["Eight Total Employees", "Fifty Employees", "Two Hundred", "Twenty Employees"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "his_04",
+      "question": "What did the original Centro logo feature?",
+      "options": ["Green/Black Pyramid", "Solid Black Square", "Red/White Star", "Blue/Orange Globe"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "his_05",
+      "question": "What was the original service or product Centro offered at launch?",
+      "options": ["Health Care", "IT Support", "Software Development", "Retail Sales"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "his_06",
+      "question": "How many locations does Centro currently operate in?",
+      "options": ["Ten Locations", "Four Locations", "Two Locations", "Six Locations"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "val_01",
+      "question": "What is the 'Centro Way' when it comes to solving internal conflicts?",
+      "options": ["Ignore the issue", "Ask the CEO", "Argue it out", "Follow the process"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "val_02",
+      "question": "If a Centroee shows integrity in a tough situation, which value are they applying?",
+      "options": ["God First", "Pursuing Excellence", "Helping People Develop", "Growing Profitably"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "val_03",
+      "question": "Which value is most closely linked to our 'Customer First' approach?",
+      "options": ["Helping People Develop", "Growing Profitably", "Pursuing Excellence", "God First"],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "val_04",
+      "question": "What is the name of the initiative that identifies high-performing employees early?",
+      "options": ["Centro Star Performers", "Centro Talent Pool", "Centro Future Leaders", "Centro Elite Group"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "val_05",
+      "question": "Which value allows us to innovate and give back?",
+      "options": ["Pursuing Excellence", "Helping People Develop", "God First", "Growing Profitably"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "val_06",
+      "question": "Which value fosters a culture of continuous learning?",
+      "options": ["God First", "Helping People Develop", "Pursuing Excellence", "Growing Profitably"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "val_07",
+      "question": "Which of the following is NOT one of Centro's core values?",
+      "options": ["Beating the Competition", "Growing Profitably", "God First", "Pursuing Excellence"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "cli_01",
+      "question": "Which industry do the majority of our clients belong to?",
+      "options": ["Automotive", "E-commerce", "Healthcare", "Real Estate"],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "cli_02",
+      "question": "Which of these clients has been with Centro for over 3 years?",
+      "options": ["Pampered Chef", "Tesla", "Amazon", "Microsoft"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "cli_03",
+      "question": "Which partnership recently won an award for 'Key Contributor of the Year'?",
+      "options": ["Hubspot", "Zoho", "Microsoft", "Salesforce"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "cli_04",
+      "question": "Do we serve clients in more than three different countries?",
+      "options": ["True", "False", "Only in USA", "Only in Egypt"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "cli_05",
+      "question": "How many countries do we serve clients in?",
+      "options": ["Five Countries", "Twelve Countries", "Three Countries", "Eight Countries"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "cli_06",
+      "question": "Which department acts as the main bridge between Centro and our clients?",
+      "options": ["Quality Assurance", "IT Department", "Human Resources", "Client Relationship Management"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "cli_07",
+      "question": "Which brand-new client joined the Centro family last quarter?",
+      "options": ["Zillow", "Vello", "Trello", "HelloFresh"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "rul_01",
+      "question": "Where can a Centroee find the most updated Employee Handbook?",
+      "options": ["Facebook Group", "IT Help Desk", "The Kitchen Bulletin", "Process Excellence SharePoint"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "rul_02",
+      "question": "Which item is strictly prohibited on the operational floor?",
+      "options": ["Mobile Phones", "Company Headsets", "Water Bottles", "Coffee Mugs"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "rul_03",
+      "question": "What is the dress code policy for Thursdays or Fridays?",
+      "options": ["Formal Suits", "Pajamas", "Beachwear", "Casual Attire"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "rul_04",
+      "question": "To whom should you report a technical issue or broken equipment?",
+      "options": ["IT Department", "HR Department", "Security Guard", "Janitorial Staff"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "rul_05",
+      "question": "True or False: Employees can play online games during assigned shifts.",
+      "options": ["Only on Fridays", "False", "Only multiplayer games", "True"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "rul_06",
+      "question": "True or False: You can eat chips or biscuits outside the kitchen.",
+      "options": ["True", "False", "Only candy", "Only fruit"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "rul_07",
+      "question": "What happens if you forget your Centro ID more than 3 times in a month?",
+      "options": ["Written Warning", "Fired Immediately", "Misconduct Record", "Nothing happens"],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "rul_08",
+      "question": "True or False: You can use IQOS and Vapes in the break rooms.",
+      "options": ["Only near windows", "False", "True", "Only on weekends"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "rul_09",
+      "question": "Which of the following footwear is strictly banned at the office?",
+      "options": ["Only Slippers", "None are banned", "Only Sandals", "All of the above (Sandals, Loafers, Slippers)"],
+      "correctAnswerIndex": 3
+    }
+  ]
 }
