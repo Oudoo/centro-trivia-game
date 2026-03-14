@@ -191,28 +191,34 @@ export default function PlayerPage() {
   // ─── QUESTION SCREEN ─────────────────────────────────────────────
   if (screen === 'question') {
     return (
-      <div className="min-h-screen flex flex-col p-4 bg-centro-dark">
-        <div className="text-center mb-4 animate-fadeIn">
-          <img src="/centro-logo.png" alt="Centro" className="h-8 mx-auto mb-2" />
-          <p className="text-centro-white/50 text-sm font-bold uppercase tracking-widest">
+      <div className="h-[100dvh] w-full flex flex-col p-4 sm:p-6 bg-centro-dark overflow-hidden overscroll-none">
+        {/* Header & Question Text */}
+        <div className="text-center mb-4 sm:mb-6 animate-fadeIn shrink-0 flex flex-col items-center justify-center pt-2">
+          <img src="/centro-logo.png" alt="Centro" className="h-6 sm:h-8 mx-auto mb-2 sm:mb-3" />
+          <p className="text-centro-white/50 text-xs sm:text-sm font-bold uppercase tracking-widest mb-2 sm:mb-3">
             Question {question?.questionNumber} of {question?.totalQuestions}
           </p>
+          <h2 className="text-xl md:text-2xl font-bold text-center px-1 leading-snug line-clamp-4">
+            {question?.question}
+          </h2>
         </div>
 
-        <div className="flex-1 grid grid-cols-1 gap-3 content-center">
+        {/* Answer Buttons Grid */}
+        <div className="flex flex-col flex-1 gap-3 min-h-0 pb-2">
           {question?.options.map((option, i) => (
             <button
               key={i}
               onClick={() => handleAnswer(i)}
               disabled={selectedAnswer !== null}
-              className={`answer-btn ${answerColors[i]} ${selectedAnswer === i ? 'ring-4 ring-white scale-95' : ''
+              className={`answer-btn flex-1 min-h-0 flex items-center px-4 sm:px-6 rounded-2xl w-full transition-all ${answerColors[i]} ${selectedAnswer === i ? 'ring-4 ring-white scale-95' : ''
                 }`}
               style={{
                 animationDelay: `${i * 80}ms`,
+                justifyContent: 'flex-start'
               }}
             >
-              <span className="mr-3 text-2xl opacity-70">{answerShapes[i]}</span>
-              <span className="text-lg">{option}</span>
+              <span className="mr-4 text-2xl sm:text-3xl opacity-70 flex-shrink-0">{answerShapes[i]}</span>
+              <span className="text-lg sm:text-xl font-bold text-left leading-tight break-words line-clamp-3">{option}</span>
             </button>
           ))}
         </div>
